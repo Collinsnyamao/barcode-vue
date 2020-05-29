@@ -122,7 +122,7 @@
       controlSequenceKeys: ['NumLock', 'Clear'], // default is null
       callbackAfterTimeout: true // default is false
   }*/
-  Vue.use(VueBarcodeScanner, options)
+  Vue.use(VueBarcodeScanner)
 
   export default {
       directives: {
