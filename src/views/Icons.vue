@@ -76,6 +76,13 @@
                                     <base-input placeholder="Scanner"></base-input>
                                 </div>
                             </div>
+                            <div class="row">
+                                <ul id="example-1">
+                                    <li v-for="item in items" :key="item.barcode">
+                                        {{ item.barcode }}
+                                    </li>
+                                </ul>
+                            </div>
                             <!--<div class="row icon-examples">
                                 <div class="col-lg-3 col-md-6"
                                      v-for="(icon, index) in icons" :key="icon.name + index">
@@ -137,7 +144,7 @@
       data() {
       return {
           loading: false,
-        icons: [
+          icons: [
           { name: "ni ni-active-40" },
           { name: "ni ni-air-baloon" },
           { name: "ni ni-album-2" },
@@ -239,7 +246,10 @@
           { name: "ni ni-ungroup" },
           { name: "ni ni-world-2" },
           { name: "ni ni-ui-04" }
-        ]
+        ],
+          items: [
+              { barcode: 'Foo' },
+          ]
       }
     },
       methods: {
@@ -247,6 +257,7 @@
           onBarcodeScanned (barcode) {
               console.log(barcode)
               // do something...
+              this.items.push({barcode: barcode});
           },
           // Reset to the last barcode before hitting enter (whatever anything in the input box)
           resetBarcode () {
