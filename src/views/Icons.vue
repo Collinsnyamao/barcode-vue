@@ -78,7 +78,7 @@
                             </div>
                             <div class="row">
                                 <ul id="example-1">
-                                    <li v-for="item in items" :key="item.barcode">
+                                    <li v-for="item in items">
                                         {{ item.barcode }}
                                     </li>
                                 </ul>
@@ -247,9 +247,7 @@
           { name: "ni ni-world-2" },
           { name: "ni ni-ui-04" }
         ],
-          items: [
-              { barcode: 'Foo' },
-          ]
+          items: []
       }
     },
       methods: {
