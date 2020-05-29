@@ -122,8 +122,13 @@
           'b-tooltip': BTooltipDirective
       },
       created () {
-          // Add barcode scan listener and pass the callback function
-          this.$barcodeScanner.init(this.onBarcodeScanned)
+          // Pass an options object with `eventBus: true` to receive an eventBus back
+          // which emits `start` and `finish` events
+          const eventBus = this.$barcodeScanner.init(this.onBarcodeScanned, { eventBus: true })
+          if (eventBus) {
+              eventBus.$on('start', () => { this.loading = true })
+              eventBus.$on('finish', () => { this.loading = false })
+          }
       },
       destroyed () {
           // Remove listener when component is destroyed
@@ -131,6 +136,7 @@
       },
       data() {
       return {
+          loading: false,
         icons: [
           { name: "ni ni-active-40" },
           { name: "ni ni-air-baloon" },
@@ -237,12 +243,6 @@
       }
     },
       methods: {
-          onCopy() {
-              this.$notify({
-                  type: 'success',
-                  title: 'Copied to clipboard'
-              })
-          },
           // Create callback function to receive barcode when the scanner is already done
           onBarcodeScanned (barcode) {
               console.log(barcode)
