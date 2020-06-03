@@ -57,7 +57,7 @@
                             </div>-->
                             <div class="text-center">
                                 <h3>
-                                    Jessica Jones<span class="font-weight-light">, 27</span>
+                                    {{ barcode }}<span class="font-weight-light"></span>
                                 </h3>
                                 <div class="h5 font-weight-300">
                                     <i class="ni location_pin mr-2"></i>Bucharest, Romania
@@ -228,7 +228,8 @@ export default {
                 about: '',
             },
             loading: false,
-            items: []
+            items: [],
+            barcode: '-'
         }
     },
     methods: {
@@ -252,7 +253,7 @@ export default {
         onBarcodeScanned(barcode) {
             console.log(barcode)
             // do something...
-            this.items.push({barcode: barcode});
+            this.barcode = barcode;
         },
         // Reset to the last barcode before hitting enter (whatever anything in the input box)
         resetBarcode() {
