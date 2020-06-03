@@ -254,11 +254,24 @@ export default {
             console.log(barcode)
             // do something...
             this.barcode = barcode;
+            this.getSingleData(barcode);
         },
         // Reset to the last barcode before hitting enter (whatever anything in the input box)
         resetBarcode() {
             let barcode = this.$barcodeScanner.getPreviousCode()
             // do something...
+        },
+        async getSingleData(barcode) {
+            let params = {
+                productCode: barcode,
+            }
+
+            console.log(params)
+
+            let res = await axios.post('http://localhost:3000/api/find', params);
+
+            console.log('product answer', res.data);
+
         }
     }
 };
