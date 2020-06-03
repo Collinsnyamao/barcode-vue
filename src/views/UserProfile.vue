@@ -273,15 +273,10 @@ export default {
 
             console.log(params)
 
-            let res = await axios.post('http://localhost:3000/api/find', params)
-                    .then(function (response) {
-                        console.log('then response', response);
-                    })
-                    .catch(function (error) {
-                        console.error('caught error', error, ' status ', error.status);
-                    });
+            let res = await axios.post('http://localhost:3000/api/find', params);
 
             console.log('product answer', res.data);
+            console.log('product status', res.status);
             this.populateData(res.data.name, res.data.code, res.data.description);
 
         },
