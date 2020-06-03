@@ -273,18 +273,16 @@ export default {
 
             console.log(params)
 
-            let res = await axios.post('http://localhost:3000/api/find', params);
+            let res = await axios.post('http://localhost:3000/api/find', params)
+                    .then(function (response) {
+                        console.log('then response', response);
+                    })
+                    .catch(function (error) {
+                        console.error('caught error', error, ' status ', error.status);
+                    });
 
             console.log('product answer', res.data);
-            this.productBarcode = 'Loading...';
-            if (res.data.name){
-                this.populateData(res.data.name, res.data.code, res.data.description);
-            }else {
-                this.productName = '';
-                this.productBarcode = 'No data found';
-                this.productDescription = '';
-            }
-
+            this.populateData(res.data.name, res.data.code, res.data.description);
 
         },
         populateData(name, barcode, description) {
