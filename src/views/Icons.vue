@@ -85,7 +85,7 @@
                             </div>-->
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="card border-dark mb-3" style="max-width: 15rem;" v-for="product in products">
+                                    <div class="card border-dark mb-3" style="max-width: 15rem;" v-for="(product, index) in products" :key="product.name + index">
                                         <div class="card-header">{{ product.name }}</div>
                                         <div class="card-body text-dark">
                                             <h5 class="card-title">{{ product.code }}</h5>
