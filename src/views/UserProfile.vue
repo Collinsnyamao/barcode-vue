@@ -182,7 +182,7 @@
     </div>
 </template>
 <script>
-
+/* eslint-disable */
 import axios from 'axios';
 import VueBarcodeScanner from 'vue-barcode-scanner'
 import Vue from "vue";
