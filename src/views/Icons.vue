@@ -282,7 +282,7 @@ export default {
         },
         async fetchData() {
             let params = {
-                productCode: barcode,
+                productCode: 'call',
             }
 
             console.log(params)
