@@ -104,7 +104,7 @@
                                         <div class="col-lg-6">
                                             <base-input alternative=""
                                                         label="Product code"
-                                                        placeholder="bar code"
+                                                        v-bind:placeholder=inputBarcodePlaceholder
                                                         input-classes="form-control-alternative"
                                                         v-model="model.productCode"
                                             />
@@ -231,7 +231,8 @@ export default {
             items: [],
             productBarcode: '-',
             productDescription: '-',
-            productName: '-'
+            productName: '-',
+            inputBarcodePlaceholder: 'null'
         }
     },
     methods: {
@@ -256,6 +257,8 @@ export default {
             console.log(barcode)
             // do something...
             this.productBarcode = barcode;
+
+
             this.getSingleData(barcode);
         },
         // Reset to the last barcode before hitting enter (whatever anything in the input box)
