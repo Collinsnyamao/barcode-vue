@@ -257,7 +257,7 @@ export default {
             console.log(barcode)
             // do something...
             this.productBarcode = barcode;
-
+            this.inputBarcodePlaceholder = barcode;
 
             this.getSingleData(barcode);
         },
