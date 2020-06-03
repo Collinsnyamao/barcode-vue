@@ -84,7 +84,7 @@
                                 </ul>
                             </div>-->
                             <div class="row">
-                                <div class="col-md-6" v-for="(product, index) in products" :key="product.name + index">
+                                <div class="col-md-3" v-for="(product, index) in products" :key="product.name + index">
                                     <div class="card border-dark mb-3" style="max-width: 15rem;">
                                         <div class="card-header">{{ product.name }}</div>
                                         <div class="card-body text-dark">
