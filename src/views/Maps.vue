@@ -68,7 +68,6 @@
             <div class="row">
                 <div class="col">
                     <div class="card shadow border-0">
-                        <div id="map-canvas" class="map-canvas" data-lat="40.748817" data-lng="-73.985428" style="height: 600px;"></div>
                     </div>
                 </div>
             </div>
@@ -78,12 +77,12 @@
 <script>
   export default {
     mounted() {
-      let google= window.google
+      /*let google= window.google
       let map = document.getElementById('map-canvas');
       let lat = map.getAttribute('data-lat');
-      let lng = map.getAttribute('data-lng');
+      let lng = map.getAttribute('data-lng');*/
 
-      const myLatlng = new google.maps.LatLng(lat, lng);
+      /*const myLatlng = new google.maps.LatLng(lat, lng);
       const mapOptions = {
         zoom: 12,
         scrollwheel: false,
@@ -98,27 +97,27 @@
           {"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
           {"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},
           {"featureType":"water","elementType":"all","stylers":[{"color":'#5e72e4'},{"visibility":"on"}]}]
-      }
+      }*/
 
-      map = new google.maps.Map(map, mapOptions);
+      /*map = new google.maps.Map(map, mapOptions);*/
 
-      const marker = new google.maps.Marker({
+      /*const marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
         animation: google.maps.Animation.DROP,
         title: 'Hello World!'
-      });
+      });*/
 
       const contentString = '<div class="info-window-content"><h2>Argon Dashboard</h2>' +
         '<p>A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</p></div>';
 
-      const infowindow = new google.maps.InfoWindow({
+      /*const infowindow = new google.maps.InfoWindow({
         content: contentString
-      });
+      });*/
 
-      google.maps.event.addListener(marker, 'click', function() {
+      /*google.maps.event.addListener(marker, 'click', function() {
         infowindow.open(map, marker);
-      });
+      });*/
     }
   }
 </script>

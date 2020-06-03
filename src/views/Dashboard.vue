@@ -196,7 +196,10 @@
         };
         this.bigLineChart.chartData = chartData;
         this.bigLineChart.activeIndex = index;
-      }
+      },
+        getData(){
+          console.log('data');
+        }
     },
     mounted() {
       this.initBigChart(0);

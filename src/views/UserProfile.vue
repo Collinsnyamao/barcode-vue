@@ -1,11 +1,11 @@
 <template>
     <div>
         <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
-                     style="min-height: 600px; background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+                     style="min-height: 50px; background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
             <!-- Mask -->
             <span class="mask bg-gradient-success opacity-8"></span>
             <!-- Header container -->
-            <div class="container-fluid d-flex align-items-center">
+            <!--<div class="container-fluid d-flex align-items-center">
                 <div class="row">
                     <div class="col-lg-7 col-md-10">
                         <h1 class="display-2 text-white">Hello Jesse</h1>
@@ -13,7 +13,7 @@
                         <a href="#!" class="btn btn-info">Edit profile</a>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </base-header>
 
         <div class="container-fluid mt--7">
@@ -21,7 +21,7 @@
                 <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
 
                     <div class="card card-profile shadow">
-                        <div class="row justify-content-center">
+                        <!--<div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
                                 <div class="card-profile-image">
                                     <a href="#">
@@ -35,9 +35,9 @@
                                 <base-button size="sm" type="info" class="mr-4">Connect</base-button>
                                 <base-button size="sm" type="default" class="float-right">Message</base-button>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="card-body pt-0 pt-md-4">
-                            <div class="row">
+                            <!--<div class="row">
                                 <div class="col">
                                     <div class="card-profile-stats d-flex justify-content-center mt-md-5">
                                         <div>
@@ -54,7 +54,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="text-center">
                                 <h3>
                                     Jessica Jones<span class="font-weight-light">, 27</span>
@@ -68,9 +68,9 @@
                                 <div>
                                     <i class="ni education_hat mr-2"></i>University of Computer Science
                                 </div>
-                                <hr class="my-4" />
+                                <!--<hr class="my-4" />
                                 <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
-                                <a href="#">Show more</a>
+                                <a href="#">Show more</a>-->
                             </div>
                         </div>
                     </div>
@@ -81,10 +81,10 @@
                         <div slot="header" class="bg-white border-0">
                             <div class="row align-items-center">
                                 <div class="col-8">
-                                    <h3 class="mb-0">My account</h3>
+                                    <h3 class="mb-0">New product</h3>
                                 </div>
                                 <div class="col-4 text-right">
-                                    <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+                                    <button class="btn btn-sm btn-primary" v-on:click="getData">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -95,43 +95,35 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <base-input alternative=""
-                                                        label="Username"
-                                                        placeholder="Username"
+                                                        label="Product name"
+                                                        placeholder="Product name"
                                                         input-classes="form-control-alternative"
-                                                        v-model="model.username"
+                                                        v-model="model.productName"
                                             />
                                         </div>
                                         <div class="col-lg-6">
                                             <base-input alternative=""
-                                                        label="Email address"
-                                                        placeholder="jesse@example.com"
+                                                        label="Product code"
+                                                        placeholder="bar code"
                                                         input-classes="form-control-alternative"
-                                                        v-model="model.email"
+                                                        v-model="model.productCode"
                                             />
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <base-input alternative=""
-                                                        label="First name"
-                                                        placeholder="First name"
-                                                        input-classes="form-control-alternative"
-                                                        v-model="model.firstName"
-                                            />
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <base-input alternative=""
-                                                        label="Last name"
-                                                        placeholder="Last name"
-                                                        input-classes="form-control-alternative"
-                                                        v-model="model.lastName"
-                                            />
+                                                        label="Product description">
+                                                <textarea rows="4" class="form-control form-control-alternative"
+                                                          placeholder="A few words"
+                                                          v-model="model.productDescription"></textarea>
+                                            </base-input>
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="my-4" />
+                                <!--<hr class="my-4" />-->
                                 <!-- Address -->
-                                <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                                <!--<h6 class="heading-small text-muted mb-4">Contact information</h6>
                                 <div class="pl-lg-4">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -170,9 +162,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="my-4" />
+                                <hr class="my-4" />-->
                                 <!-- Description -->
-                                <h6 class="heading-small text-muted mb-4">About me</h6>
+                                <!--<h6 class="heading-small text-muted mb-4">About me</h6>
                                 <div class="pl-lg-4">
                                     <div class="form-group">
                                         <base-input alternative=""
@@ -180,7 +172,7 @@
                                             <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
                                         </base-input>
                                     </div>
-                                </div>
+                                </div>-->
                             </form>
                         </template>
                     </card>
@@ -190,23 +182,84 @@
     </div>
 </template>
 <script>
-  export default {
+
+import axios from 'axios';
+import VueBarcodeScanner from 'vue-barcode-scanner'
+import Vue from "vue";
+/*let options = {
+      sound: true, // default is false
+      soundSrc: '/static/sound.wav', // default is blank
+      sensitivity: 300, // default is 100
+      requiredAttr: true, // default is false
+      callbackAfterTimeout: true // default is false
+  }*/
+Vue.use(VueBarcodeScanner);
+
+export default {
     name: 'user-profile',
-    data() {
-      return {
-        model: {
-          username: '',
-          email: '',
-          firstName: '',
-          lastName: '',
-          address: '',
-          city: '',
-          country: '',
-          zipCode: '',
-          about: '',
+    created() {
+        // Pass an options object with `eventBus: true` to receive an eventBus back
+        // which emits `start` and `finish` events
+        const eventBus = this.$barcodeScanner.init(this.onBarcodeScanned, {eventBus: true})
+        if (eventBus) {
+            eventBus.$on('start', () => {
+                this.loading = true
+            })
+            eventBus.$on('finish', () => {
+                this.loading = false
+            })
         }
-      }
     },
-  };
+    destroyed() {
+        // Remove listener when component is destroyed
+        this.$barcodeScanner.destroy()
+    },
+    data() {
+        return {
+            model: {
+                productName: '',
+                productCode: '',
+                productDescription: '',
+                lastName: '',
+                address: '',
+                city: '',
+                country: '',
+                zipCode: '',
+                about: '',
+            },
+            loading: false,
+            items: []
+        }
+    },
+    methods: {
+        getData() {
+            this.createProduct(this.model.productName, this.model.productDescription, this.model.productCode);
+        },
+        async createProduct(pName, pDesc, pCode) {
+            let params = {
+                productName: pName,
+                productCode: pCode,
+                productDescription: pDesc
+            }
+
+            console.log(params)
+
+            let res = await axios.post('http://localhost:3000/api/create/product', params);
+
+            console.log('response', res.data);
+        },
+        // Create callback function to receive barcode when the scanner is already done
+        onBarcodeScanned(barcode) {
+            console.log(barcode)
+            // do something...
+            this.items.push({barcode: barcode});
+        },
+        // Reset to the last barcode before hitting enter (whatever anything in the input box)
+        resetBarcode() {
+            let barcode = this.$barcodeScanner.getPreviousCode()
+            // do something...
+        }
+    }
+};
 </script>
 <style></style>
