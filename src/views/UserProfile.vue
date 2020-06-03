@@ -57,16 +57,16 @@
                             </div>-->
                             <div class="text-center">
                                 <h3>
-                                    {{ barcode }}<span class="font-weight-light"></span>
+                                    {{ productBarcode }}<span class="font-weight-light"></span>
                                 </h3>
-                                <div class="h5 font-weight-300">
+                                <!--<div class="h5 font-weight-300">
                                     <i class="ni location_pin mr-2"></i>Bucharest, Romania
-                                </div>
+                                </div>-->
                                 <div class="h5 mt-4">
-                                    <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                                    <i class="ni business_briefcase-24 mr-2"></i>{{ productName }}
                                 </div>
                                 <div>
-                                    <i class="ni education_hat mr-2"></i>University of Computer Science
+                                    <i class="ni education_hat mr-2"></i>{{ productDescription }}
                                 </div>
                                 <!--<hr class="my-4" />
                                 <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
@@ -229,7 +229,9 @@ export default {
             },
             loading: false,
             items: [],
-            barcode: '-'
+            productBarcode: '-',
+            productDescription: '-',
+            productName: '-'
         }
     },
     methods: {
@@ -253,7 +255,7 @@ export default {
         onBarcodeScanned(barcode) {
             console.log(barcode)
             // do something...
-            this.barcode = barcode;
+            this.productBarcode = barcode;
             this.getSingleData(barcode);
         },
         // Reset to the last barcode before hitting enter (whatever anything in the input box)
@@ -271,7 +273,13 @@ export default {
             let res = await axios.post('http://localhost:3000/api/find', params);
 
             console.log('product answer', res.data);
+            this.populateData(res.data.name, res.data.code, res.data.description);
 
+        },
+        populateData(name, barcode, description) {
+            this.productName = name;
+            this.productBarcode = barcode;
+            this.productDescription = description;
         }
     }
 };
