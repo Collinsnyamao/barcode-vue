@@ -83,11 +83,15 @@
                                     </li>
                                 </ul>
                             </div>-->
-                            <div class="card border-dark mb-3" style="max-width: 15rem;" v-for="product in products">
-                                <div class="card-header">{{ product.name }}</div>
-                                <div class="card-body text-dark">
-                                    <h5 class="card-title">{{ product.code }}</h5>
-                                    <p class="card-text">{{ product.description }}</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card border-dark mb-3" style="max-width: 15rem;" v-for="product in products">
+                                        <div class="card-header">{{ product.name }}</div>
+                                        <div class="card-body text-dark">
+                                            <h5 class="card-title">{{ product.code }}</h5>
+                                            <p class="card-text">{{ product.description }}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!--<div class="row icon-examples">
